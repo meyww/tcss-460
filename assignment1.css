@@ -116,22 +116,30 @@ header {
     font-size: 15px;
     color: #1d1c1c;
   }
-  
-  .image-container {
+  .similarProducts {
     display: flex;
-  }
-  
-  .image-wrapper {
+}
+  .image-container {
+    margin: 1%;
+    border:1px solid #ccc;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin-right: 10px;
   }
   
-  .image-caption {
-    margin-top: 5px;
-  }
+  .image-wrapper {
+    margin: 5px;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+
+
   
   footer {
     background-color: black;
