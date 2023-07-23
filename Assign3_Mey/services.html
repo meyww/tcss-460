@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>FITNESS CLUB</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link
+        href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">FITNESS CLUB</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">About Us</a></li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="services.html">Service</a>
+                    </li>
+                    <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="question.html">Question</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">BMI Calculator</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Calculate your Body Mass Index (BMI) to assess your body's weight
+                        status and determine if you're in a healthy range. Simply enter your weight and height, and
+                        we'll provide you with your BMI value. Remember, BMI is just one indicator of overall health, so
+                        consult with a healthcare professional for a comprehensive assessment. Let's get started!</p>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation-->
+    <section class="page-section about-heading">
+        <div class="container">
+            <div class="about-heading-content">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-10 mx-auto">
+                        <div class="bg-faded rounded p-5">
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper">CALCULATE BMI</span>
+                            </h2>
+                            <p> BMI is considered a reliable indicator of body fatness for the majority of individuals.
+                                Its primary purpose is to screen for weight categories that might be associated with
+                                potential health issues.
+                                Using this tool, you can obtain your BMI value and the corresponding weight category,
+                                which will help you gain insights into your overall body fatness and potential health
+                                risks. </p>
+                            <div>
+                                <form action="#" method="post" id="calculatorForm">
+                                    <div class="form-group">
+                                        <label for="height">Height:</label>
+                                        <input id="heightfeets" type="number" placeholder="Feet" step="0.01"
+                                            name="height_ft" required>
+                                        <input id="heightinches" type="number" placeholder="Inches" step="0.01"
+                                            name="height_in" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="weight">Weight (in pounds):</label>
+                                        <input id="weightpounds" type="number" placeholder="Pounds" step="0.01"
+                                            name="weight" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="age">Age:</label>
+                                        <input id="age" type="number" name="age" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Gender:</label>
+                                        <select id="gender" name="gender" required>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                    <button id="calBMI" type="submit" class="btn btn-primary">Calculate</button>
+                                </form>
+                            </div>
+                            <div id="results">
+                                <!-- Results will be displayed here -->
+                                <p id="valueBMI">BMI is ...</p>
+                                <p id="valueBodyfat">Body fat is ...</p>
+                                <p id="idealWeight">Ideal weight is ...</p>
+                                <p id="calories">Burn up to ...</p>
+                            </div>
+                            <div id="status"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for BMI -->
+    <div class="modal" id="infoDialog" tabindex="-1" role="dialog" aria-labelledby="infoDialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Body Composition:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-justify">
+                    <div class="card">
+                        <ul class="list-group">
+                            <li class="list-group-item" id="valueBMI"></li>
+                            <li class="list-group-item" id="valueBodyfat"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p id="footer-info"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer-->
+    <footer class="bg-light py-5">
+        <div class="small text-center text-muted">Copyright &copy; 2023 - FITNESS CLUB </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
