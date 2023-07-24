@@ -18,7 +18,7 @@ app.use(express.json());
 // Root route to display information about the REST Service
 app.post('/', function (req, res) {
   res.status(200);
-  res.send("<h1>This Fitness calculator can help you to estimate BMI, total body fat, ideal weight, and amount of daily calories burned with low activity. \nTo do so, fill out the form and click 'Calculate' button. </h1>");
+  res.send("This Fitness help you calculator estimate BMI, total body fat, ideal weight, and calories burned.>");
   console.log("A request has been processed at / (root) ");
 });
 
